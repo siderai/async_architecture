@@ -1,11 +1,14 @@
 package main
 
 import (
-    "go-service/database"
-    "go-service/routers"
+	"go-service/database"
+	"go-service/routers"
+	"log"
 )
 
 func main() {
-    db := database.SetupDatabase()
-    routers.SetupRouter(db).Run(":8080")
+	log.Println("Starting")
+	db := database.SetupDatabase()
+	routers.SetupRouter(db).Run(":8080")
+	log.Println("Started")
 }
